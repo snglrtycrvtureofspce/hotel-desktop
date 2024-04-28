@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище KingWilliamHotelDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblGuests">
+          <Key>
+            <PropertyRef Name="GuestID" />
+          </Key>
+          <Property Name="GuestID" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GuestAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblReservations">
+          <Key>
+            <PropertyRef Name="ReservationID" />
+          </Key>
+          <Property Name="ReservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GuestID" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="RoomID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="EmployeeID" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="DateMade" Type="date" Nullable="false" />
+          <Property Name="ReservationStartDate" Type="date" Nullable="false" />
+          <Property Name="ReservationEndDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblRooms">
+          <Key>
+            <PropertyRef Name="RoomID" />
+          </Key>
+          <Property Name="RoomID" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="RoomTypeID" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+          <Property Name="RoomFloor" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__tblReserv__Guest__20C1E124">
+          <End Role="tblGuests" Type="Self.tblGuests" Multiplicity="1" />
+          <End Role="tblReservations" Type="Self.tblReservations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGuests">
+              <PropertyRef Name="GuestID" />
+            </Principal>
+            <Dependent Role="tblReservations">
+              <PropertyRef Name="GuestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblReserv__RoomI__21B6055D">
+          <End Role="tblRooms" Type="Self.tblRooms" Multiplicity="1" />
+          <End Role="tblReservations" Type="Self.tblReservations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRooms">
+              <PropertyRef Name="RoomID" />
+            </Principal>
+            <Dependent Role="tblReservations">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище KingWilliamHotelDBModelContainer">
+          <EntitySet Name="tblGuests" EntityType="Self.tblGuests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblReservations" EntityType="Self.tblReservations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRooms" EntityType="Self.tblRooms" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblReserv__Guest__20C1E124" Association="Self.FK__tblReserv__Guest__20C1E124">
+            <End Role="tblGuests" EntitySet="tblGuests" />
+            <End Role="tblReservations" EntitySet="tblReservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblReserv__RoomI__21B6055D" Association="Self.FK__tblReserv__RoomI__21B6055D">
+            <End Role="tblRooms" EntitySet="tblRooms" />
+            <End Role="tblReservations" EntitySet="tblReservations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KingWilliamHotelDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblGuests">
+          <Key>
+            <PropertyRef Name="GuestID" />
+          </Key>
+          <Property Name="GuestID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GuestAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblReservations" Relationship="Self.FK__tblReserv__Guest__20C1E124" FromRole="tblGuests" ToRole="tblReservations" />
+        </EntityType>
+        <EntityType Name="tblReservations">
+          <Key>
+            <PropertyRef Name="ReservationID" />
+          </Key>
+          <Property Name="ReservationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GuestID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RoomID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateMade" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ReservationStartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ReservationEndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="tblGuests" Relationship="Self.FK__tblReserv__Guest__20C1E124" FromRole="tblReservations" ToRole="tblGuests" />
+          <NavigationProperty Name="tblRooms" Relationship="Self.FK__tblReserv__RoomI__21B6055D" FromRole="tblReservations" ToRole="tblRooms" />
+        </EntityType>
+        <EntityType Name="tblRooms">
+          <Key>
+            <PropertyRef Name="RoomID" />
+          </Key>
+          <Property Name="RoomID" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RoomTypeID" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="RoomFloor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblReservations" Relationship="Self.FK__tblReserv__RoomI__21B6055D" FromRole="tblRooms" ToRole="tblReservations" />
+        </EntityType>
+        <Association Name="FK__tblReserv__Guest__20C1E124">
+          <End Role="tblGuests" Type="Self.tblGuests" Multiplicity="1" />
+          <End Role="tblReservations" Type="Self.tblReservations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGuests">
+              <PropertyRef Name="GuestID" />
+            </Principal>
+            <Dependent Role="tblReservations">
+              <PropertyRef Name="GuestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblReserv__RoomI__21B6055D">
+          <End Role="tblRooms" Type="Self.tblRooms" Multiplicity="1" />
+          <End Role="tblReservations" Type="Self.tblReservations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblRooms">
+              <PropertyRef Name="RoomID" />
+            </Principal>
+            <Dependent Role="tblReservations">
+              <PropertyRef Name="RoomID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KingWilliamHotelDBEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblGuests" EntityType="Self.tblGuests" />
+          <EntitySet Name="tblReservations" EntityType="Self.tblReservations" />
+          <EntitySet Name="tblRooms" EntityType="Self.tblRooms" />
+          <AssociationSet Name="FK__tblReserv__Guest__20C1E124" Association="Self.FK__tblReserv__Guest__20C1E124">
+            <End Role="tblGuests" EntitySet="tblGuests" />
+            <End Role="tblReservations" EntitySet="tblReservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblReserv__RoomI__21B6055D" Association="Self.FK__tblReserv__RoomI__21B6055D">
+            <End Role="tblRooms" EntitySet="tblRooms" />
+            <End Role="tblReservations" EntitySet="tblReservations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище KingWilliamHotelDBModelContainer" CdmEntityContainer="KingWilliamHotelDBEntities3">
+          <EntitySetMapping Name="tblGuests">
+            <EntityTypeMapping TypeName="KingWilliamHotelDBModel.tblGuests">
+              <MappingFragment StoreEntitySet="tblGuests">
+                <ScalarProperty Name="GuestID" ColumnName="GuestID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="GuestAddress" ColumnName="GuestAddress" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblReservations">
+            <EntityTypeMapping TypeName="KingWilliamHotelDBModel.tblReservations">
+              <MappingFragment StoreEntitySet="tblReservations">
+                <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
+                <ScalarProperty Name="GuestID" ColumnName="GuestID" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="DateMade" ColumnName="DateMade" />
+                <ScalarProperty Name="ReservationStartDate" ColumnName="ReservationStartDate" />
+                <ScalarProperty Name="ReservationEndDate" ColumnName="ReservationEndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRooms">
+            <EntityTypeMapping TypeName="KingWilliamHotelDBModel.tblRooms">
+              <MappingFragment StoreEntitySet="tblRooms">
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="RoomTypeID" ColumnName="RoomTypeID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="RoomFloor" ColumnName="RoomFloor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

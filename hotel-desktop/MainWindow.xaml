@@ -1,0 +1,60 @@
+﻿<Window x:Class="snglrtycrvtureofspce.Hotels.Desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:snglrtycrvtureofspce.Hotels.Desktop"
+        mc:Ignorable="d"
+        Title="Панель администратора" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" WindowState="Normal" Height="497" Width="1137">
+    <Grid Height="487" VerticalAlignment="Top" RenderTransformOrigin="0.508,0.524">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="143*"/>
+            <RowDefinition Height="668*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="button" HorizontalAlignment="Left" Margin="448,95,0,0" VerticalAlignment="Top" Width="320" Height="68" Background="#FF2B2A28" Click="NewReservationForm_Click" Grid.Row="1">
+            <StackPanel Width="263" Orientation="Horizontal" Height="63">
+                <Label Content="Новое бронирование" VerticalAlignment="Center"  Foreground="#FFFBFBFB" FontSize="26" Margin="0,16,0,15.2" FontFamily="Arial" Height="42"/>
+            </StackPanel>
+        </Button>
+        <Border BorderThickness="0 0 0 1" BorderBrush="#FF2B2A28" Height="84" VerticalAlignment="Center">
+            <Image x:Name="image" Source="/logo.jpg" RenderTransformOrigin="-0.491,-0.017" Margin="24,6,1033,9" />
+        </Border>
+        <Label x:Name="lblHeader" Content="Панель администратора" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" FontWeight="Bold" Foreground="#FF2B2A28" Height="74" Width="585"/>
+        <Button x:Name="button_Copy1" HorizontalAlignment="Left" Margin="809,94,0,0" VerticalAlignment="Top" Width="296" Height="72" Background="#FF2B2A28" Click="RoomServicesForm_Click" Grid.Row="1">
+            <StackPanel Width="91" Orientation="Horizontal" Height="64">
+                <Label Content="Услуги"  Foreground="#FFFBFBFB" FontSize="26" Width="141" FontFamily="Arial" Height="42"/>
+            </StackPanel>
+
+        </Button>
+        <Button x:Name="button_Copy5" HorizontalAlignment="Left" Margin="32,91,0,0" VerticalAlignment="Top" Width="368" Height="72" Background="#FF2B2A28" Click="GuestForm_Click" Grid.Row="1">
+            <StackPanel Width="73" Orientation="Horizontal" Height="36">
+                <Label Content="Гости"  Foreground="#FFFBFBFB" FontSize="26" Width="303" FontFamily="Arial" Height="48"/>
+            </StackPanel>
+
+        </Button>
+        <Label x:Name="lblReservation" Content="Бронирование" HorizontalAlignment="Left" Margin="448,25,0,0" VerticalAlignment="Top" FontSize="46" Background="{x:Null}" BorderThickness="0,0,0,2" FontFamily="Arial Unicode MS" Grid.Row="1" Height="65" Width="320"/>
+        <Label x:Name="lblServices" Content="Доп. услуги" HorizontalAlignment="Left" Margin="829,22,0,0" VerticalAlignment="Top" FontSize="46" Background="{x:Null}" BorderThickness="0,0,0,2" FontFamily="Arial Unicode MS" Grid.Row="1" Height="65" Width="256"/>
+        <Button x:Name="btnPricing" HorizontalAlignment="Left" Margin="448,273,0,0" VerticalAlignment="Top" Width="320" Height="70" Background="#FF2B2A28" Click="RoomPricingForm_Click" Grid.Row="1">
+            <StackPanel Width="167" Orientation="Horizontal" Height="63">
+                <Label Content="Прайс-листы" VerticalAlignment="Center"  Foreground="#FFFBFBFB" FontSize="26" Margin="0,16,0,15.2" Width="219" RenderTransformOrigin="0.688,0.584" FontFamily="Arial" Height="42"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnEditTransaction" HorizontalAlignment="Left" Margin="809,178,0,0" VerticalAlignment="Top" Width="296" Height="72" Background="#FF2B2A28" Click="EditTransactionForm_Copy_Click" Grid.Row="1">
+            <StackPanel Width="146" Orientation="Horizontal" Height="64">
+                <Label Content="Транзакции" VerticalAlignment="Center"  Foreground="#FFFBFBFB" FontSize="26" Margin="0,16,0,15.2" FontFamily="Arial" Width="234" Height="43"/>
+            </StackPanel>
+        </Button>
+        <Label x:Name="lblServices_Copy" Content="Базы данных" HorizontalAlignment="Left" Margin="70,22,0,0" VerticalAlignment="Top" FontSize="46" Background="{x:Null}" BorderThickness="0,0,0,2" FontFamily="Arial Unicode MS" Grid.Row="1" Height="64" Width="292"/>
+        <Label x:Name="lblServices_Copy1" Content="Прайс-листы" HorizontalAlignment="Left" Margin="464,203,0,0" VerticalAlignment="Top" FontSize="46" Background="{x:Null}" BorderThickness="0,0,0,2" FontFamily="Arial Unicode MS" Grid.Row="1" Height="65" Width="288"/>
+        <Button x:Name="btnPricing_Copy1" HorizontalAlignment="Left" Margin="32,271,0,0" VerticalAlignment="Top" Width="368" Height="72" Background="#FF2B2A28" Click="btnPricing_Copy1_Click" Grid.Row="1">
+            <StackPanel Width="227" Orientation="Horizontal" Height="56">
+                <Label Content="Список номеров" VerticalAlignment="Center"  Foreground="#FFFBFBFB" FontSize="26" Margin="0,16,0,15.2" Width="217" RenderTransformOrigin="0.688,0.584" FontFamily="Arial" Height="42"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnEditTransaction_Копировать" HorizontalAlignment="Left" Margin="32,179,0,0" VerticalAlignment="Top" Width="368" Height="72" Background="#FF2B2A28" Click="EditEmployeeForm_Copy_Click" Grid.Row="1">
+            <StackPanel Width="146" Orientation="Horizontal" Height="64">
+                <Label Content="Работники"  Foreground="#FFFBFBFB" FontSize="26" FontFamily="Arial" Width="234" Height="44"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>

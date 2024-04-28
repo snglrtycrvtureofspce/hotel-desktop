@@ -1,0 +1,60 @@
+﻿<Window x:Class="snglrtycrvtureofspce.Hotels.Desktop.NomeraBD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:snglrtycrvtureofspce.Hotels.Desktop"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="Список номеров" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" WindowState="Normal" Height="450" Width="932">
+    <Grid>
+        <Grid Background="WhiteSmoke">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="247*"/>
+                <ColumnDefinition Width="153*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                <TextBlock Text="Введите номер комнаты: "
+                           FontSize="16" />
+                <TextBox Width="109"
+                         FontSize="16"
+                         x:Name="Poisk"
+                         TextChanged="Poisk_TextChanged"
+                         />
+            </StackPanel>
+
+            <DataGrid Grid.Row="1"
+                      AutoGenerateColumns="False"
+                      x:Name="RoomGrid"
+                      Grid.ColumnSpan="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Номер Комнаты" Width="*" Binding="{Binding RoomID}"/>
+                    <DataGridTextColumn Header="Тип" Width="*" Binding="{Binding RoomTypeID}"/>
+                    <DataGridTextColumn Header="Цена за ночь" Width="*" Binding="{Binding Cost}"/>
+                    <DataGridTextColumn Header="Этаж" Width="*" Binding="{Binding RoomFloor}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <CheckBox Content="Одиночный" HorizontalAlignment="Left" Margin="447,18,0,0" VerticalAlignment="Top" Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked"/>
+            <CheckBox Content="Двойной" HorizontalAlignment="Left" Margin="447,35,0,0" VerticalAlignment="Top" Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked_1"/>
+            <CheckBox Content="Номер Делюкс" HorizontalAlignment="Left" Margin="538,18,0,0" VerticalAlignment="Top" Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked_2" Grid.ColumnSpan="2"/>
+            <CheckBox Content="Полулюкс" HorizontalAlignment="Left" Margin="538,35,0,0" VerticalAlignment="Top" Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked_3" Grid.ColumnSpan="2"/>
+            <CheckBox Content="Угловой Люкс" HorizontalAlignment="Left" Margin="70,18,0,0" VerticalAlignment="Top" Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked_4" Grid.Column="1"/>
+            <CheckBox Content="Люкс Роял" HorizontalAlignment="Left" Margin="70,35,0,0" VerticalAlignment="Top" Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked_5" Grid.Column="1"/>
+            <CheckBox Content="Семейный Люкс" HorizontalAlignment="Left" Margin="172,18,0,0" VerticalAlignment="Top" Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked_6" Grid.Column="1"/>
+            <CheckBox Content="Президентский Люкс" HorizontalAlignment="Left" Margin="172,35,0,0" VerticalAlignment="Top" Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked_7" Grid.Column="1"/>
+            <Image x:Name="image" Source="/logo.jpg" RenderTransformOrigin="-0.491,-0.017" Margin="12,6,454,6" />
+            <Button Content="На главную" HorizontalAlignment="Left" Margin="145,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="40" Width="201" Click="MainMenu_Click" Background="#FFFEFEFE" Foreground="#FF2B2A28" Grid.Column="1"/>
+            <Button Content="Отчёт о топ номерах" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Height="40" Width="286" Click="Report_Click" Background="#FF2B2A28" Foreground="#FFFEFEFE" Grid.ColumnSpan="2" Margin="420,0,0,0"/>
+            <Button Visibility="Hidden" Content="Проверка свободен ли номер в определённую дату" HorizontalAlignment="Left" Margin="22,0,0,0" Grid.Row="2" VerticalAlignment="Center" Height="40" Width="301" Click="Check_click" Background="#FF2B2A28" Foreground="#FFFEFEFE"/>
+        </Grid>
+    </Grid>
+</Window>

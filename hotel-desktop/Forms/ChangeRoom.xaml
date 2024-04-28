@@ -1,0 +1,22 @@
+﻿<Window x:Class="snglrtycrvtureofspce.Hotels.Desktop.ChangeRoom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:snglrtycrvtureofspce.Hotels.Desktop"
+        mc:Ignorable="d"
+        Title="ChangeRoom" Height="329.512" Width="648.644" WindowStyle="None">
+    <Grid>
+        <Label x:Name="lblRoomType" Content="Тип номера:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="114" Margin="167,128,0,0" RenderTransformOrigin="0.159,0.471"/>
+        <ComboBox x:Name="cmbRoomType" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" FontSize="16" Margin="355,132,0,0" SelectionChanged="cmbRoomType_SelectionChanged"/>
+        <Label x:Name="lblRoomType_Copy" Content="Номер комнаты:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="127" Margin="175,179,0,0"/>
+        <ComboBox x:Name="cmbRoomNumber" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" FontSize="16" Margin="355,188,0,0"/>
+        <Button x:Name="btnSubmit" Content="Изменить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" Height="32" Background="#4682B4" FontSize="18" Foreground="#FFF1F1F1"  Margin="175,255,0,0" Click="btnSubmit_Click"/>
+        <Button x:Name="btnCancel" Content="Отменить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="32" Background="#4682B4" FontSize="18" Foreground="#FFF1F1F1"  Margin="355,255,0,0" Click="btnCancel_Click"/>
+        <Label x:Name="lblStartDate" Content="Дата заезда" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="178" Margin="134,29,0,0"/>
+        <Label x:Name="lblEndDate" Content="Дата отъезда" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="192" Margin="132,77,0,0"/>
+        <DatePicker x:Name="dpiStartDate" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"  Width="132"  Focusable="False" Margin="355,29,0,0" SelectedDateChanged="dpiStartDate_SelectedDateChanged"/>
+        <DatePicker x:Name="dpiEndDate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="132" FontSize="16"  Height="32" Focusable="False" Margin="355,77,0,0" SelectedDateChanged="dpiEndDate_SelectedDateChanged"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="snglrtycrvtureofspce.Hotels.Desktop.AddEditRoom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:snglrtycrvtureofspce.Hotels.Desktop"
+        mc:Ignorable="d"
+        Title="AddEditRoom" Height="554.517" Width="773.517">
+    <Canvas Margin="0,68,23,54" x:Name="cnvRoom" HorizontalAlignment="Right" Width="657" >
+        <Button x:Name="btnEdit" Content="Изменить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="159" Height="48" Background="#4682B4" FontSize="18" Foreground="#FFF1F1F1" Canvas.Left="123" Canvas.Top="355" Click="btnEdit_Click"/>
+        <Label x:Name="lblType" Content="Тип номера"  HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Canvas.Left="2" Canvas.Top="75"/>
+        <Label x:Name="lblCost" Content="Цена за ночь" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Width="173" Canvas.Top="147" Canvas.Left="-29"/>
+        <Label x:Name="lblFloor" Content="Этаж"  HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Width="101" Canvas.Left="-24" Canvas.Top="186"/>
+        <Label x:Name="lblEmployee" Content="ID:"  HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Canvas.Left="2" Canvas.Top="37" RenderTransformOrigin="1.502,0.705"/>
+        <Label x:Name="lblGuestName_Copy" Content="Статус номера"  HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Canvas.Left="2" Canvas.Top="111"/>
+        <Button x:Name="btnExit" Content="Выход" HorizontalAlignment="Left" VerticalAlignment="Top" Width="159" Height="48" Background="#4682B4" FontSize="18" Foreground="#FFF1F1F1" Canvas.Left="344" Canvas.Top="355" Click="btnExit_Click"/>
+        <Label x:Name="lblHeader" Content="Добавить номер" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" Canvas.Left="68" Canvas.Top="-73"/>
+        <TextBox x:Name="txtID" Height="32" Canvas.Left="298" TextWrapping="Wrap" Canvas.Top="37" Width="312" IsEnabled="False"/>
+        <TextBox x:Name="txtType" Height="32" Canvas.Left="298" TextWrapping="Wrap" Canvas.Top="75" Width="312"/>
+        <TextBox x:Name="txtStatusID" Height="32" Canvas.Left="298" TextWrapping="Wrap" Canvas.Top="111" Width="312"/>
+        <TextBox x:Name="txtCost" Height="32" Canvas.Left="298" TextWrapping="Wrap" Canvas.Top="148" Width="312"/>
+        <TextBox x:Name="txtFloor" Height="32" Canvas.Left="298" TextWrapping="Wrap" Canvas.Top="186" Width="312"/>
+        <Label x:Name="lblFloor_Copy" Content="Типы номеров: S - одиночный, D - двуспальный, U - люкс."  HorizontalContentAlignment="Center" FontSize="16" Width="671" Canvas.Left="-119" Canvas.Top="243" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.513,2.098"/>
+        <Label x:Name="lblFloor_Copy1" Content="Статус номера: 1 - готов к заселению,  2 - необходима уборка, 3 - необходим ремонт."  HorizontalContentAlignment="Center" FontSize="16" Width="818" Canvas.Top="274" RenderTransformOrigin="0.513,2.098" HorizontalAlignment="Left" VerticalAlignment="Center" Canvas.Left="-91"/>
+
+    </Canvas>
+</Window>

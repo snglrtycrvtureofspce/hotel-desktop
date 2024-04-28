@@ -1,0 +1,49 @@
+﻿<Window x:Class="snglrtycrvtureofspce.Hotels.Desktop.ExistingReservation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:snglrtycrvtureofspce.Hotels.Desktop"
+        mc:Ignorable="d"
+        Title="ExistingReservation" Height="854.654" Width="1118" ResizeMode="CanMinimize" WindowState="Normal">
+    <Grid Height="805" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1226">
+        <Border BorderThickness="0 0 0 1" BorderBrush="#FF3556C8"  HorizontalAlignment="Left" Height="119" VerticalAlignment="Top" Width="1534" Grid.ColumnSpan="3">
+            <Image x:Name="image" Source="/logo.jpg" RenderTransformOrigin="-0.491,-0.017" Margin="171,-68,1090,-47" />
+        </Border>
+        <Label x:Name="lblExistingReservationTitle" Content="Бронирование" HorizontalAlignment="Left" Margin="162,119,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" FontFamily="Times New Roman"/>
+        <Label x:Name="label2" Content="Введите номер" HorizontalAlignment="Left" Margin="203,203,0,0" VerticalAlignment="Top" FontSize="26" Width="388"/>
+        <TextBox x:Name="txtFind" HorizontalAlignment="Left" Height="32" Margin="502,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" FontSize="16"/>
+        <Button x:Name="btnFind" Content="Найти" HorizontalAlignment="Left" Margin="214,269,0,0" VerticalAlignment="Top" Width="99" Background="#4682B4" FontSize="16" Foreground="#FFF1F1F1" Height="34" Click="btnFind_Click"/>
+        <Canvas Margin="290,315,292.2,77.2" Visibility="Visible" Name="cnvResult">
+            <Label x:Name="lblGuestFirstName" Content="Имя:"  HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Canvas.Left="-61" Canvas.Top="59" RenderTransformOrigin="-0.666,0.577"/>
+            <Label x:Name="lblPhone" Content="Телефон:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Width="101" Canvas.Top="137" Canvas.Left="-73"/>
+            <Label x:Name="lblEmail" Content="E-mail:"  HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Width="101" Canvas.Left="323" Canvas.Top="137"/>
+            <Label x:Name="lblAddress" Content="Номер паспорта:"  HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Width="101" Canvas.Top="98" Canvas.Left="-82"/>
+            <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="283" Canvas.Left="45" Canvas.Top="59" FontSize="16"/>
+            <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="283" Canvas.Left="45" Canvas.Top="143" FontSize="16"/>
+            <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="283" Canvas.Left="45" Canvas.Top="101" FontSize="16"/>
+            <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="283" Canvas.Left="462" Canvas.Top="143" FontSize="16"/>
+            <Label x:Name="lblGuestLastName" Content="Фамилия:"  HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Canvas.Left="348" Canvas.Top="59"/>
+            <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="284" Canvas.Left="462" Canvas.Top="59" FontSize="16"/>
+            <Label x:Name="lblPostalCode" Content="Пол:"  HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Width="101" Canvas.Left="331" Canvas.Top="98"/>
+            <TextBox x:Name="txtPostalCode" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="283" Canvas.Left="462" Canvas.Top="101" FontSize="16"/>
+            <Border Height="168" Canvas.Left="195" Canvas.Top="211" Width="585"  BorderThickness="2">
+                <Grid Margin="-298,-8,299,8">
+                    <Label x:Name="lblStartDateDisplay" Content="Дата заезда:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="178" Margin="-4,10,0,0"/>
+                    <Label x:Name="lblEndDateDisplay" Content="Дата отъезда:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="181" Margin="-2,57,0,0"/>
+                    <Label x:Name="lblRoomNumber" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="174" Foreground="Black" Margin="197,108,0,0" BorderBrush="Black" BorderThickness="1" Height="36"/>
+                    <Label x:Name="lblRoomNumberDisplay" Content="Номер комнаты:" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="129" Margin="34,108,0,0"/>
+                    <Label x:Name="lblStartDate" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="174" Foreground="Black" Margin="197,10,0,0" BorderBrush="Black" BorderThickness="1" Height="36"/>
+                    <Label x:Name="lblEndDate" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Width="174" Foreground="Black" Margin="197,57,0,0" BorderBrush="Black" BorderThickness="1" Height="36"/>
+                </Grid>
+            </Border>
+            <Button x:Name="btnUpdate" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Center" Width="159" Height="48" Background="#4682B4" FontSize="18" Foreground="#FFF1F1F1" Canvas.Left="273" Canvas.Top="413" Click="btnUpdate_Click"/>
+            <Button x:Name="btnDelete" Content="Удалить бронирование" HorizontalAlignment="Left" VerticalAlignment="Center" Width="218" Height="48" Background="#4682B4" FontSize="18" Foreground="#FFF1F1F1" Canvas.Left="495" Canvas.Top="413" Click="btnDelete_Click"/>
+            <Label x:Name="lblGuestID" Content="ID гостя:"  HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" Canvas.Left="-65" Canvas.Top="9"/>
+            <TextBox x:Name="txtGuestID" HorizontalAlignment="Left" Height="31" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="283" FontSize="16" Canvas.Left="45" Canvas.Top="10" IsEnabled="False"/>
+        </Canvas>
+        <Button x:Name="btnCancel" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Height="34" Background="#4682B4" FontSize="16" Foreground="#FFF1F1F1" Click="btnCancel_Click" Margin="400,269,0,0"/>
+        <Button x:Name="btnEdit" Content="Изменить дату или комнату" HorizontalAlignment="Left" VerticalAlignment="Top" Width="267" Height="48" Background="#4682B4" FontSize="18" Foreground="#FFF1F1F1" Margin="219,728,0,0" Click="btnEdit_Click"/>
+
+    </Grid>
+</Window>

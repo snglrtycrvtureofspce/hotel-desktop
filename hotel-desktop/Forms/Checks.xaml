@@ -1,0 +1,28 @@
+﻿<Window x:Class="snglrtycrvtureofspce.Hotels.Desktop.Checks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:snglrtycrvtureofspce.Hotels.Desktop"
+        Loaded="Window_Loaded"
+        mc:Ignorable="d"
+        Title="Чек" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" WindowState="Normal" Height="389" Width="401">
+    <Grid x:Name="checkgrid" HorizontalAlignment="Center" Width="401" Height="369" VerticalAlignment="Center">
+        <Button x:Name="nazad" Content="Назад" HorizontalAlignment="Left" Margin="82,314,0,0" VerticalAlignment="Top" Click="Button_Click" Height="21" Width="119"/>
+        <Label x:Name="vivods" Content="" HorizontalAlignment="Left" Margin="287,50,0,0" VerticalAlignment="Top" FontWeight="SemiBold" />
+        <Label Content="Бронирование номер: " HorizontalAlignment="Left" Margin="61,41,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Ваш номер комнаты:" HorizontalAlignment="Left" Margin="80,89,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="nomer" Content="" HorizontalAlignment="Left" Margin="259,94,0,0" VerticalAlignment="Top" FontWeight="SemiBold"/>
+        <Label Content="Дата заезда в отель:" HorizontalAlignment="Left" Margin="80,120,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="first" Content="" HorizontalAlignment="Left" Margin="242,125,0,0" VerticalAlignment="Top" FontWeight="SemiBold"/>
+        <Label Content="Дата выезда из отеля:" HorizontalAlignment="Left" Margin="80,151,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="second" Content="" HorizontalAlignment="Left" Margin="264,156,0,0" VerticalAlignment="Top" FontWeight="SemiBold"/>
+        <Label Content="Итого: " HorizontalAlignment="Left" Margin="82,256,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.53,-0.258"/>
+        <Label x:Name="third" Content="" HorizontalAlignment="Left" Margin="144,261,0,0" VerticalAlignment="Top" FontWeight="SemiBold"/>
+        <Image x:Name="thirds" Margin="327,0,0,114" Visibility="Visible" Source="/image-removebg-preview.png" Stretch="Fill" HorizontalAlignment="Left" Width="90" Height="88" VerticalAlignment="Bottom"/>
+        <Label Content="М.П." HorizontalAlignment="Left" Margin="292,260,0,0" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="85,201,0,0" Stroke="Black" VerticalAlignment="Top" Width="224"/>
+        <Button x:Name="ce" Content="Печать" HorizontalAlignment="Left" Margin="254,314,0,0" VerticalAlignment="Top" Click="Button_Click_1" Width="73" Height="23"/>
+
+    </Grid>
+</Window>
